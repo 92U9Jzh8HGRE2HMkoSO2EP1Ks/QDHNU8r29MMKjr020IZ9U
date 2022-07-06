@@ -55,7 +55,7 @@ end
 
 
 return {
-TeleportPlayer = function TeleportPlayer(player)
+TPlayer = function TeleportPlayer(player)
     coroutine.wrap(Bypass)()
     local Target = game.Players:FindFirstChild(player).Character.HumanoidRootPart.CFrame
     task.wait()
@@ -76,9 +76,9 @@ TeleportPlayer = function TeleportPlayer(player)
     task.wait()
     Point.CFrame = Target
     Point.Anchored = false
-end
+end,
 
-TeleportPos = function TeleportPos(pos)
+TPosition = function TeleportPos(pos)
     coroutine.wrap(Bypass)()
     local Target = pos
     task.wait()
@@ -99,5 +99,5 @@ TeleportPos = function TeleportPos(pos)
     task.wait()
     Point.CFrame = Target
     Point.Anchored = false
-end
+end,
 }
