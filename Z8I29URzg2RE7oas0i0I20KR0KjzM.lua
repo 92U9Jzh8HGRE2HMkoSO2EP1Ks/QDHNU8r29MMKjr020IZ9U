@@ -53,8 +53,9 @@ local function Bypass();
     game:GetService("CoreGui").InternalStuff:Destroy();
 end
 
-return {
-TPlayer = function TeleportPlayer(player)
+local Library = {}
+
+function Library:TeleportPlayer(player)
     coroutine.wrap(Bypass)();
     local Target = game.Players:FindFirstChild(player).Character.HumanoidRootPart.CFrame;
     task.wait();
@@ -75,9 +76,9 @@ TPlayer = function TeleportPlayer(player)
     task.wait();
     Point.CFrame = Target;
     Point.Anchored = false;
-end,
+end
 
-TPosition = function TeleportPos(pos)
+function Library:TeleportPos(pos)
     coroutine.wrap(Bypass)();
     local Target = pos;
     task.wait();
@@ -98,5 +99,6 @@ TPosition = function TeleportPos(pos)
     task.wait();
     Point.CFrame = Target;
     Point.Anchored = false;
-end,
-}
+end
+
+return Library;
