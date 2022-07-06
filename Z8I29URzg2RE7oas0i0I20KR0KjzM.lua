@@ -53,51 +53,50 @@ local function Bypass()
     game:GetService("CoreGui").InternalStuff:Destroy()
 end
 
-
 return {
-TPlayer = function TeleportPlayer(player)
-    coroutine.wrap(Bypass)()
-    local Target = game.Players:FindFirstChild(player).Character.HumanoidRootPart.CFrame
-    task.wait()
-    TweenService:Create(Point, TweenInfo.new(.5, Enum.EasingStyle.Linear), {CFrame = Target}):Play()
-    task.wait(.2)
-    Point.Anchored = true
-    Point.CFrame = CFrame.new(1,1,1)
-    Point.CFrame = Target
-    task.wait(.2)
-    TweenService:Create(Point, TweenInfo.new(.5, Enum.EasingStyle.Linear), {CFrame = Target}):Play()
-    task.wait()
-    Point.CFrame = Target
-    Point.Anchored = false
-    coroutine.wrap(Unanchor)()
-    task.wait()
-    Point.CFrame = Target
-    Point.Anchored = true
-    task.wait()
-    Point.CFrame = Target
-    Point.Anchored = false
+local TPlayer = function TeleportPlayer(player)
+    coroutine.wrap(Bypass)();
+    local Target = game.Players:FindFirstChild(player).Character.HumanoidRootPart.CFrame;
+    task.wait();
+    TweenService:Create(Point, TweenInfo.new(.5, Enum.EasingStyle.Linear), {CFrame = Target}):Play();
+    task.wait(.2);
+    Point.Anchored = true;
+    Point.CFrame = CFrame.new(1,1,1);
+    Point.CFrame = Target;
+    task.wait(.2);
+    TweenService:Create(Point, TweenInfo.new(.5, Enum.EasingStyle.Linear), {CFrame = Target}):Play();
+    task.wait();
+    Point.CFrame = Target;
+    Point.Anchored = false;
+    coroutine.wrap(Unanchor)();
+    task.wait();
+    Point.CFrame = Target;
+    Point.Anchored = true;
+    task.wait();
+    Point.CFrame = Target;
+    Point.Anchored = false;
 end,
 
-TPosition = function TeleportPos(pos)
-    coroutine.wrap(Bypass)()
-    local Target = pos
-    task.wait()
-    TweenService:Create(Point, TweenInfo.new(.5, Enum.EasingStyle.Linear), {CFrame = Target}):Play()
-    task.wait(.2)
-    Point.Anchored = true
-    Point.CFrame = CFrame.new(1,1,1)
-    Point.CFrame = Target
-    task.wait(.2)
-    TweenService:Create(Point, TweenInfo.new(.5, Enum.EasingStyle.Linear), {CFrame = Target}):Play()
-     getgenv().Teleporting = false
-    task.wait()
-    Point.CFrame = Target
-    Point.Anchored = false
-    task.wait()
-    Point.CFrame = Target
-    Point.Anchored = true
-    task.wait()
-    Point.CFrame = Target
-    Point.Anchored = false
+local TPosition = function TeleportPos(pos)
+    coroutine.wrap(Bypass)();
+    local Target = pos;
+    task.wait();
+    TweenService:Create(Point, TweenInfo.new(.5, Enum.EasingStyle.Linear), {CFrame = Target}):Play();
+    task.wait(.2);
+    Point.Anchored = true;
+    Point.CFrame = CFrame.new(1,1,1);
+    Point.CFrame = Target;
+    task.wait(.2);
+    TweenService:Create(Point, TweenInfo.new(.5, Enum.EasingStyle.Linear), {CFrame = Target}):Play();
+     getgenv().Teleporting = false;
+    task.wait();
+    Point.CFrame = Target;
+    Point.Anchored = false;
+    task.wait();
+    Point.CFrame = Target;
+    Point.Anchored = true;
+    task.wait();
+    Point.CFrame = Target;
+    Point.Anchored = false;
 end,
 }
